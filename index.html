@@ -6,239 +6,230 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Topaz - Diario de desarrollo personal y registro emocional</title>
 
-  <!-- Fonts (Space Grotesk + Inter as requested) -->
+  <!-- Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap"
     rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
     rel="stylesheet">
-  <!-- Tailwind via CDN (for prototyping only) -->
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Tailwind config: enable forms, aspect-ratio, backdrop-filter
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            topaz: {
-              50: '#f7fbfb',
-              100: '#eef8f6',
-              300: '#8fd6d1',
-              500: '#2bb3a3',
-              700: '#23A3BB'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-            display: ['Space Grotesk', 'Inter']
-          }
-        }
-      },
-      plugins: [
-        function ({ addUtilities }) {
-          addUtilities({
-            '.backdrop-blur-md': { 'backdrop-filter': 'blur(8px)' }
-          })
-        }
-      ]
-    }
-  </script>
-
-  <style>
-    html,
-    body {
-      height: 100%;
-    }
-
-    body {
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-
-    /* macOS-like traffic lights */
-    .traffic {
-      width: 12px;
-      height: 12px;
-      border-radius: 9999px;
-      display: inline-block;
-      margin-right: 6px;
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06) inset;
-    }
-
-    .window-drag {
-      -webkit-app-region: drag;
-    }
-
-    .ubuntu-regular {
-      font-family: "Ubuntu", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-    }
-  </style>
+  <script src="js/tailwindconfig.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body class="bg-[#F5F5F7] text-slate-800 min-h-screen">
 
-  <!-- Top bar (macOS style) -->
-  <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[92%] max-w-6xl z-40">
+  <!-- Top bar -->
+  <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl z-40">
     <div
       class="flex items-center justify-between px-3 py-2 bg-white/60 backdrop-blur-md rounded-2xl shadow-lg border border-white/70">
       <div class="flex items-center gap-3">
-        <div class="ml-2 window-drag">
-          <h1 class="text-sm ubuntu-regular text-slate-700">topaz</h1>
-        </div>
+        <h1 class="text-sm ubuntu-regular text-slate-700">topaz</h1>
       </div>
 
       <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-4">
-          <nav class="flex gap-4 text-sm text-slate-600">
-            <a href="#" class="hover:text-slate-900">Inicio</a>
-            <a href="#features" class="hover:text-slate-900">Funcionalidades</a>
-            <a href="#stats" class="hover:text-slate-900">Galería</a>
-            <a href="#download" class="hover:text-slate-900">Descargar</a>
-          </nav>
-        </div>
+        <nav class="hidden sm:flex gap-4 text-sm text-slate-600">
+          <a href="#" class="hover:text-slate-900">Inicio</a>
+          <a href="#features" class="hover:text-slate-900">Funcionalidades</a>
+          <a href="#gallery" class="hover:text-slate-900">Galería</a>
+          <a href="#download" class="hover:text-slate-900">Descargar</a>
+        </nav>
       </div>
     </div>
   </header>
 
-  <!-- Main layout -->
-  <main class="pt-20 pb-12 flex justify-center px-4 max-w-[1200px] mx-auto">
-    <div class=" p-6">
-      <!-- Content area -->
-      <section class="lg:col-span-9">
+  <!-- Main content -->
+  <main class="pt-24 pb-12 px-4 max-w-[1200px] mx-auto">
+    <section class="p-4">
 
-        <!-- Hero / App window mockup -->
-        <div class="p-6 bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-white/60">
-          <div class="flex flex-col md:flex-row gap-6">
-            <div class="flex-1">
-              <h2 class="text-3xl text-topaz-700 ubuntu-regular text-center">topaz</h2>
-              <h3 class="text-4xl text-black text-center mt-2">Tu viaje personal, en tus propias palabras</h3>
+      <!-- Hero -->
+      <div
+        class="p-6 bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-white/60 flex flex-col md:flex-row gap-6">
+        <div class="flex-1 text-center md:text-left">
+          <h2 class="text-3xl text-topaz-700 ubuntu-regular">topaz</h2>
+          <h3 class="text-4xl text-black mt-2">Tu viaje personal, en tus propias palabras</h3>
+          <p class="mt-3 text-slate-600 max-w-xl mx-auto md:mx-0">Topaz es una app que te ayudará en tu crecimiento
+            personal.</p>
+          <p class="mt-2 text-slate-600 max-w-xl mx-auto md:mx-0">Es un diario guiado que te ayudará a hacer
+            introspección que favorece en la regulación y el bienestar emocional.</p>
+          <div class="mt-6 flex flex-col sm:flex-row justify-center md:justify-start gap-3">
+            <a href="#download"
+              class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-topaz-700 text-white font-semibold shadow hover:brightness-105">Descargar</a>
+            <a href="#features"
+              class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700">Funcionalidades</a>
+          </div>
+        </div>
 
-              <p class="mt-3 text-slate-600 max-w-xl text-center mx-auto">Topaz es una app que te ayudará en tu crecimiento
-                personal.</p>
-              <p class="mt-3 text-slate-600 max-w-xl text-center mx-auto">Es un diario guiado que te ayudará a hacer
-                introspección que favorece en la regulación y el bienestar emocional.</p>
+        <!-- Mock macOS window -->
+        <div class="w-full md:w-96 mx-auto">
+          <img class="mx-auto mt-4 rounded-xl" src="images/dashboard.png" alt="Dashboard preview">
+        </div>
+      </div>
 
-              <div class="mt-6 flex justify-center gap-3">
-                <a href="#download"
-                  class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-topaz-700 text-white font-semibold shadow hover:brightness-105">Descargar</a>
-                <a href="#features"
-                  class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700">Funcionalidades</a>
-              </div>
+      <!-- Features 1 -->
+      <div id="features" class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
+          <h3 class="font-semibold">Privacidad Primero</h3>
+          <p class="text-sm text-slate-600 mt-2">Tus entradas de diario están encriptadas y almacenadas en tu
+            dispositivo</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
+          <h3 class="font-semibold">Diario Guiado</h3>
+          <p class="text-sm text-slate-600 mt-2">Escribe sobre tu dia, reflexionando sobre las distintas áreas que hay
+            que trabajar para llevar una vida plena</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
+          <h3 class="font-semibold">Seguimiento de emociones</h3>
+          <p class="text-sm text-slate-600 mt-2">Haz revisiones para registrar tu estado emocional y valoraciones acerca
+            de tu dia a dia</p>
+        </div>
+      </div>
+
+      <!-- Features 2 -->
+      <div id="features2" class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
+          <h3 class="font-semibold">Estadísticas</h3>
+          <p class="text-sm text-slate-600 mt-2">Gráficas que te muestran tu actividad, tu trayectoría emocional y
+            frecuencia emocional </p>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
+          <h3 class="font-semibold">Trabajo Interno</h3>
+          <p class="text-sm text-slate-600 mt-2">Escribe ensayos sobre temas importantes para ti, como la asertividad,
+            autoestima, perseverancia, gratitud, etc.</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
+          <h3 class="font-semibold">Meditación</h3>
+          <p class="text-sm text-slate-600 mt-2">Temporizador con instrucciones para meditar, pausar e incrementar la
+            concentración.</p>
+        </div>
+      </div>
+
+      <div id="gallery" class="mt-2 flex justify-center bg-gallery rounded-3xl shadow-lg p-6">
+        <!-- Limit the carousel size -->
+        <div class="swiper mySwiper w-full max-w-4xl rounded-xl ">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide relative">
+              <img src="images/gallery-dashboard.png" alt="dashboard" class="w-full h-auto" />
             </div>
 
-            <!-- Mock macOS window preview -->
-            <div class="w-full md:w-96 mx-auto">
-              <img class="mx-auto mt-4" src="images/dashboard.png">
+            <div class="swiper-slide relative">
+              <img src="images/gallery-diary.png" alt="diario" class="w-full h-auto rounded-xl" />
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide relative">
+              <img src="images/gallery-diaryEdit.png" alt="diario editar" class="w-full h-auto rounded-xl" />
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide relative">
+              <img src="images/gallery-diaryEdit.png" alt="diario editar" class="w-full h-auto rounded-xl" />
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide relative">
+              <img src="images/gallery-revision.png" alt="revision" class="w-full h-auto rounded-xl" />
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="swiper-slide relative">
+              <img src="images/gallery-revisionEdit.png" alt="revision edit" class="w-full h-auto rounded-xl" />
+            </div>
+
+            <!-- Slide 7 -->
+            <div class="swiper-slide relative">
+              <img src="images/gallery-revisionEdit2.png" alt="revision edit" class="w-full h-auto rounded-xl" />
+            </div>
+
+            <!-- Slide 8 -->
+            <div class="swiper-slide relative">
+              <img src="images/gallery-trabajoInterno.png" alt="trabajo interno" class="w-full h-auto rounded-xl" />
+            </div>
+
+            <!-- Slide 9 -->
+            <div class="swiper-slide relative">
+              <img src="images/gallery-stats.png" alt="stats" class="w-full h-auto rounded-xl" />
+            </div>
+
+            <!-- Slide 10 -->
+            <div class="swiper-slide relative">
+              <img src="images/gallery-stats1.png" alt="stats" class="w-full h-auto rounded-xl" />
+            </div>
+
+            <!-- Slide 11 -->
+            <div class="swiper-slide relative">
+              <img src="images/meditacion.png" alt="meditation" class="w-full h-auto rounded-xl" />
             </div>
           </div>
-        </div>
 
-        <!-- Features -->
-        <div id="features" class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
-            <h3 class="font-semibold">Privacidad Primero</h3>
-            <p class="text-sm text-slate-600 mt-2">Tus entradas de diario están encriptadas y almacenadas en tu
-              dispositivo</p>
-          </div>
-          <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
-            <h3 class="font-semibold">Diario Guiado</h3>
-            <p class="text-sm text-slate-600 mt-2">Escribe sobre tu dia, reflexionando sobre las distintas áreas que hay
-              que trabajar para llevar una vida plena</p>
-          </div>
-          <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
-            <h3 class="font-semibold">Seguimiento de emociones</h3>
-            <p class="text-sm text-slate-600 mt-2">Haz revisiones para registrar tu estado emocional y valoraciones
-              acerca de tu dia a dia</p>
-          </div>
-        </div>
+          <!-- Navigation buttons -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
 
-        <!-- Features -->
-        <div id="features2" class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
-            <h3 class="font-semibold">Estadísticas</h3>
-            <p class="text-sm text-slate-600 mt-2">Gráficas que te muestran tu actividad, tu trayectoría emocional y
-              frecuencia emocional </p>
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- CTA / Download -->
+      <div id="download"
+        class="mt-10 p-6 rounded-2xl bg-gradient-to-r from-topaz-500 to-topaz-300 text-white shadow-lg">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="text-center md:text-left">
+            <h3 class="text-2xl font-semibold">Descarga Topaz</h3>
+            <p class="text-sm opacity-90 mt-1">Descárgalo en formato .jar y úsalo donde quieras</p>
           </div>
-          <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
-            <h3 class="font-semibold">Trabajo Interno</h3>
-            <p class="text-sm text-slate-600 mt-2">Escribe ensayos sobre temas importantes para ti, como la asertividad,
-              autoestima, perseverancia, gratitud, etc.</p>
-          </div>
-          <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
-            <h3 class="font-semibold">Meditación</h3>
-            <p class="text-sm text-slate-600 mt-2">Temporizador con instrucciones para meditar, pausar e incrementar la
-              concentración.</p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a class="px-4 py-2 rounded-full bg-white/10 border hover:brightness-110"
+              href="https://github.com/selekode/Topaz/releases/download/v25.9.1-SNAPSHOT/topaz-25.9.1-SNAPSHOT.jar">Descargar .jar</a>
+            <a class="px-4 py-2 rounded-full bg-white/10 border hover:brightness-110" href="documentacion.html">Guía de
+              instalación</a>
           </div>
         </div>
+      </div>
 
-        <!-- Insights 
-        <div id="insights" class="mt-6 p-4 bg-white/70 backdrop-blur-md rounded-2xl border">
-          <h3 class="font-semibold">Correlations & Insights</h3>
-          <p class="text-sm text-slate-500 mt-2">See relationships between emotions and ratings (e.g., Discipline vs.
-            Mood).</p>
-
-          <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div class="p-3 rounded-lg bg-slate-50 border">Heatmap placeholder — can be Chart.js or D3.</div>
-            <div class="p-3 rounded-lg bg-slate-50 border">Top correlations: Discipline ↔ Mood (r = 0.42)</div>
-          </div>
-        </div>
--->
-        <!-- CTA / Download -->
-        <div id="download"
-          class="mt-6 p-6 rounded-2xl bg-gradient-to-r from-topaz-500 to-topaz-300 text-white shadow-lg">
-          <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>
-              <h3 class="text-2xl font-semibold">Descarga Topaz</h3>
-              <p class="text-sm opacity-90 mt-1">Descárgalo en formato .jar y úsalo donde quieras</p>
-            </div>
-            <div class="flex gap-3">
-              <a class="px-4 py-2 rounded-full bg-white/10 border hover:brightness-110" href="#">Descargar .jar</a>
-              <a class="px-4 py-2 rounded-full bg-white/10 border hover:brightness-110" href="#">Guía de instalación
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-    </div>
+    </section>
   </main>
 
   <footer
-    class="relative bottom-6 left-1/2 transform -translate-x-1/2 w-[92%] max-w-6xl text-center text-xs text-slate-500">
-    <a href="http://github.com/selekode/Topaz">
+    class="relative bottom-6 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl text-center text-xs text-slate-500">
+    <a href="http://selekode.github.io/SeanLeitch">
       topaz — Sean Leitch © 2025</a>
   </footer>
 
-
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/swiper.js"></script>
+
+  <!-- SwiperJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Sample chart data (replace with real data from your app)
-    const entriesCtx = document.getElementById('entriesChart').getContext('2d')
-    const moodCtx = document.getElementById('moodChart').getContext('2d')
-
-    const entriesChart = new Chart(entriesCtx, {
-      type: 'bar',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{ label: 'Entries', data: [1, 2, 1, 3, 2, 0, 1], tension: 0.3 }]
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 20,
+      centeredSlides: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
       },
-      options: { responsive: true, plugins: { legend: { display: false } } }
-    })
-
-    const moodChart = new Chart(moodCtx, {
-      type: 'line',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{ label: 'Avg Mood', data: [6.5, 7.2, 7.0, 8.1, 6.9, 5.8, 7.3], fill: true, tension: 0.3 }]
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
       },
-      options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { suggestedMin: 0, suggestedMax: 10 } } }
-    })
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
   </script>
-
 </body>
 
 </html>

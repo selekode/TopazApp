@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Topaz - Diario de desarrollo personal y registro emocional</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwindconfig.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body class="bg-[#F5F5F7] text-slate-800 min-h-screen">
+
+  <!-- Top bar -->
+  <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl z-40">
+    <div
+      class="flex items-center justify-between px-3 py-2 bg-white/60 backdrop-blur-md rounded-2xl shadow-lg border border-white/70">
+      <div class="flex items-center gap-3">
+        <h1 class="text-sm ubuntu-regular text-slate-700">topaz</h1>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <nav class="hidden sm:flex gap-4 text-sm text-slate-600">
+          <a href="index.html#" class="hover:text-slate-900">Inicio</a>
+          <a href="index.html#features" class="hover:text-slate-900">Funcionalidades</a>
+          <a href="index.html#gallery" class="hover:text-slate-900">Galería</a>
+          <a href="index.html#download" class="hover:text-slate-900">Descargar</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="pt-24 pb-12 px-4 max-w-[1200px] mx-auto">
+    <section class="p-4">
+
+      <!-- Hero / App window mockup -->
+      <div class="p-6 bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-white/60">
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="flex-1">
+            <h2 class="text-3xl text-topaz-700 ubuntu-regular text-center">topaz</h2>
+
+            <!-- Inicio del contenido de la guía de instalación -->
+            <div class="mt-4 prose max-w-none text-sm text-gray-800">
+              <h3 class="text-2xl text-topaz-700">Guía de instalación</h3>
+
+              <h4 class="text-xl mt-4">Requisitos previos</h4>
+              <ul>
+                <li><strong>Sistema operativo:</strong> <span>Windows.</span> Topaz solo funciona en Windows porque la
+                  base de datos se guarda en la ruta fija <code>C:\Topaz\data</code>.</li>
+                <li><strong>Java:</strong> Debes tener instalada la versión <strong>Java 23</strong> (JDK 23). Comprueba
+                  la instalación con:</li>
+              </ul>
+
+              <div class="my-2">
+                <pre class="rounded-md p-3 border bg-gray-50 overflow-x-auto"><code>java -version</code></pre>
+              </div>
+
+              <h4 class="text-xl mt-4">Ejecución de Topaz</h4>
+              <p>Para ejecutar Topaz, abre <strong>cmd</strong>, navega al directorio donde está el <code>.jar</code> y
+                ejecuta:</p>
+              <div class="my-2">
+                <pre class="rounded-md p-3 border bg-gray-50 overflow-x-auto"><code>cd C:\ruta\del\jar
+java -jar topaz-25.9.1-SNAPSHOT.jar</code></pre>
+              </div>
+
+              <h4 class="text-xl mt-4">Notas adicionales</h4>
+              <ul>
+                <li>Asegúrate de que el usuario de Windows que ejecute Topaz tenga permisos de lectura/escritura en
+                  <code>C:\Topaz\data</code>.
+                </li>
+                <li>Si tienes problemas con la versión de Java, instala JDK 23 desde la web oficial de Oracle.</li>
+              </ul>
+
+            </div>
+            <!-- Fin del contenido de la guía -->
+
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+  </main>
+
+  <footer
+    class="relative bottom-6 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl text-center text-xs text-slate-500">
+    <a href="http://selekode.github.io/SeanLeitch">
+      topaz — Sean Leitch © 2025</a>
+  </footer>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/swiper.js"></script>
+
+  <!-- SwiperJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 20,
+      centeredSlides: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>
