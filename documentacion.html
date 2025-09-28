@@ -55,21 +55,58 @@
 
             <!-- Inicio del contenido de la guía de instalación -->
             <div class="mt-4 prose max-w-none text-sm text-gray-800">
-              <h3 class="text-2xl text-topaz-700">Guía de instalación</h3>
+              <h3 class="text-2xl text-topaz-700">Topaz – Versión 25.9.1-SNAPSHOT</h3>
 
-              <h4 class="text-xl mt-4">Requisitos previos</h4>
+              <p>Topaz es una aplicación de diario personal que combina <strong>Spring Boot, Thymeleaf y JavaFX</strong>
+                para ofrecerte una experiencia fluida de registro de emociones, hábitos y reflexiones diarias.</p>
+
+              <hr class="my-4">
+
+              <h4 class="text-xl mt-4">Novedades de esta versión</h4>
               <ul>
-                <li><strong>Sistema operativo:</strong> <span>Windows.</span> Topaz solo funciona en Windows porque la
-                  base de datos se guarda en la ruta fija <code>C:\Topaz\data</code>.</li>
-                <li><strong>Java:</strong> Debes tener instalada la versión <strong>Java 23</strong> (JDK 23). Comprueba
-                  la instalación con:</li>
+                <li><strong>Dashboard “Inicio”:</strong> Información general de tu progreso, rachas y recordatorios.
+                </li>
+                <li><strong>Diario “Diario”:</strong> Diario guiado para hacer introspección sobre todas las áreas de la
+                  vida.</li>
+                <li><strong>Diario “Revisión”:</strong> Registro avanzado con:
+                  <ul class="ml-4 list-disc">
+                    <li>Estado emocional</li>
+                    <li>Emociones seleccionables (Alegría, Serenidad, Tristeza, etc)</li>
+                    <li>Valoraciones personales (Disciplina, Constancia, Honestidad, Impulsividad, etc)</li>
+                  </ul>
+                </li>
+                <li><strong>Estadísticas:</strong> Visualiza métricas de tus entradas con gráficos interactivos.</li>
+                <li><strong>Meditación:</strong> Guarda y reproduce audios de meditación directamente en la app.</li>
+                <li><strong>Interfaz moderna:</strong> Tailwind CSS y JavaFX WebView para una experiencia tipo “nativa”
+                  en Windows.</li>
               </ul>
 
+              <hr class="my-4">
+
+              <h4 class="text-xl mt-4">Detalles técnicos</h4>
+              <ul>
+                <li><strong>Backend:</strong> Java 17+, Spring Boot 3.x</li>
+                <li><strong>Frontend:</strong> Thymeleaf + Tailwind CSS</li>
+                <li><strong>UI Desktop:</strong> JavaFX WebView</li>
+                <li><strong>Base de datos:</strong> SQLite</li>
+                <li><strong>Distribución:</strong> Fat JAR</li>
+              </ul>
+
+              <hr class="my-4">
+
+              <h4 class="text-xl mt-4">Guía de instalación</h4>
+              <h5 class="text-lg mt-2">Requisitos previos</h5>
+              <ul>
+                <li><strong>Sistema operativo:</strong> Windows. Topaz solo funciona en Windows porque la base de datos
+                  se guarda en la ruta fija <code>C:\Topaz\data</code>.</li>
+                <li><strong>Java:</strong> Se recomienda tener instalada la versión <strong>Java 23</strong> (JDK 23). Comprueba
+                  la instalación con:</li>
+              </ul>
               <div class="my-2">
                 <pre class="rounded-md p-3 border bg-gray-50 overflow-x-auto"><code>java -version</code></pre>
               </div>
 
-              <h4 class="text-xl mt-4">Ejecución de Topaz</h4>
+              <h4 class="text-xl mt-4">Ejecución</h4>
               <p>Para ejecutar Topaz, abre <strong>cmd</strong>, navega al directorio donde está el <code>.jar</code> y
                 ejecuta:</p>
               <div class="my-2">
@@ -77,15 +114,14 @@
 java -jar topaz-25.9.1-SNAPSHOT.jar</code></pre>
               </div>
 
-              <h4 class="text-xl mt-4">Notas adicionales</h4>
+              <h5 class="text-lg mt-4">Notas adicionales</h5>
               <ul>
                 <li>Asegúrate de que el usuario de Windows que ejecute Topaz tenga permisos de lectura/escritura en
-                  <code>C:\Topaz\data</code>.
-                </li>
+                  <code>C:\Topaz\data</code>.</li>
                 <li>Si tienes problemas con la versión de Java, instala JDK 23 desde la web oficial de Oracle.</li>
               </ul>
-
             </div>
+
             <!-- Fin del contenido de la guía -->
 
           </div>
