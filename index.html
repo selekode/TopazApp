@@ -29,7 +29,9 @@
     <div
       class="flex items-center justify-between px-3 py-2 bg-white/60 backdrop-blur-md rounded-2xl shadow-lg border border-white/70">
       <div class="flex items-center gap-3">
-        <h1 class="text-sm ubuntu-regular text-slate-700">topaz</h1>
+        <a href="#">
+          <h1 class="text-sm ubuntu-regular text-topaz-700">topaz</h1>
+        </a>
       </div>
 
       <div class="flex items-center gap-3">
@@ -75,41 +77,62 @@
       <h3 class="text-3xl text-black mt-10">Funcionalidades</h3>
 
       <div id="features" class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
+        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md text-center">
+          <i data-lucide="shield" class="mx-auto mb-2 w-8 h-8" style="color: #23A3BB;"></i>
           <h4 class="font-semibold">Privacidad Primero</h4>
-          <p class="text-sm text-slate-600 mt-2">Tus entradas de diario están encriptadas y almacenadas en tu
-            dispositivo</p>
+          <p class="text-sm text-slate-600 mt-2">
+            Tus entradas de diario están encriptadas y almacenadas en tu dispositivo
+          </p>
         </div>
-        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
+        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md text-center">
+          <i data-lucide="book-open" class="mx-auto mb-2 w-8 h-8" style="color: #23A3BB;"></i>
           <h4 class="font-semibold">Diario Guiado</h4>
-          <p class="text-sm text-slate-600 mt-2">Escribe sobre tu dia, reflexionando sobre las distintas áreas que hay
-            que trabajar para llevar una vida plena</p>
+          <p class="text-sm text-slate-600 mt-2">
+            Escribe sobre tu día, reflexionando sobre las distintas áreas que hay que trabajar para llevar una vida
+            plena
+          </p>
         </div>
-        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
+        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md text-center">
+          <i data-lucide="activity" class="mx-auto mb-2 w-8 h-8" style="color: #23A3BB;"></i>
           <h4 class="font-semibold">Seguimiento de emociones</h4>
-          <p class="text-sm text-slate-600 mt-2">Haz revisiones para registrar tu estado emocional y valoraciones acerca
-            de tu dia a dia</p>
+          <p class="text-sm text-slate-600 mt-2">
+            Haz revisiones para registrar tu estado emocional y valoraciones acerca de tu día a día
+          </p>
         </div>
       </div>
 
       <!-- Features 2 -->
       <div id="features2" class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
+        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md text-center">
+          <i data-lucide="bar-chart-3" class="mx-auto mb-2 w-8 h-8" style="color: #23A3BB;"></i>
           <h4 class="font-semibold">Estadísticas</h4>
-          <p class="text-sm text-slate-600 mt-2">Gráficas que te muestran tu actividad, tu trayectoría emocional y
-            frecuencia emocional </p>
+          <p class="text-sm text-slate-600 mt-2">
+            Gráficas que te muestran tu actividad, tu trayectoria emocional y frecuencia emocional
+          </p>
         </div>
-        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
+        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md text-center">
+          <i data-lucide="brain" class="mx-auto mb-2 w-8 h-8" style="color: #23A3BB;"></i>
           <h4 class="font-semibold">Trabajo Interno</h4>
-          <p class="text-sm text-slate-600 mt-2">Escribe ensayos sobre temas importantes para ti, como la asertividad,
-            autoestima, perseverancia, gratitud, etc.</p>
+          <p class="text-sm text-slate-600 mt-2">
+            Escribe ensayos sobre temas importantes para ti, como la asertividad, autoestima, perseverancia, gratitud,
+            etc.
+          </p>
         </div>
-        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md">
+        <div class="p-4 rounded-2xl bg-white/65 backdrop-blur-md text-center">
+          <i data-lucide="moon" class="mx-auto mb-2 w-8 h-8" style="color: #23A3BB;"></i>
           <h4 class="font-semibold">Meditación</h4>
-          <p class="text-sm text-slate-600 mt-2">Temporizador con instrucciones para meditar, pausar e incrementar la
-            concentración.</p>
+          <p class="text-sm text-slate-600 mt-2">
+            Temporizador con instrucciones para meditar, pausar e incrementar la concentración.
+          </p>
         </div>
       </div>
+
+      <!-- Lucide icons script -->
+      <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+      <script>
+        lucide.createIcons();
+      </script>
+
 
       <!-- Gallery -->
       <h3 class="text-3xl text-black mt-10">Galería</h3>
@@ -148,7 +171,8 @@
             <!-- Slide 5 -->
             <div class="swiper-slide relative">
               <p class="text-accent">Revisión</p>
-              <p class="mb-6">Haz revisiones para registrar tu estado emocional y valoraciones acerca de tu dia a dia</p>
+              <p class="mb-6">Haz revisiones para registrar tu estado emocional y valoraciones acerca de tu dia a dia
+              </p>
               <img src="images/gallery-revision.png" alt="revision" class="w-full h-auto rounded-xl" />
             </div>
 
@@ -216,8 +240,7 @@
             <a class="px-4 py-2 rounded-full bg-white/10 border hover:brightness-110"
               href="https://github.com/selekode/Topaz/releases/download/v25.9.1-SNAPSHOT/topaz-25.9.1-SNAPSHOT.jar">Descargar
               .jar</a>
-            <a class="px-4 py-2 rounded-full bg-white/10 border hover:brightness-110" href="documentacion.html">Guía de
-              instalación</a>
+            <a class="px-4 py-2 rounded-full bg-white/10 border hover:brightness-110" href="documentacion.html">Documentación</a>
           </div>
         </div>
       </div>

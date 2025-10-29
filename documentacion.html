@@ -29,7 +29,9 @@
     <div
       class="flex items-center justify-between px-3 py-2 bg-white/60 backdrop-blur-md rounded-2xl shadow-lg border border-white/70">
       <div class="flex items-center gap-3">
-        <a href="index.html"><h1 class="text-sm ubuntu-regular text-slate-700">topaz</h1></a>
+        <a href="#">
+          <h1 class="text-sm ubuntu-regular text-topaz-700">topaz</h1>
+        </a>
       </div>
 
       <div class="flex items-center gap-3">
@@ -47,20 +49,21 @@
   <main class="pt-24 pb-12 px-4 max-w-[1200px] mx-auto">
     <section class="p-4">
 
-      <!-- Hero / App window mockup -->
-      <div class="p-6 bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-white/60">
+      <div class="p-6 mb-10 bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-white/60">
         <div class="flex flex-col md:flex-row gap-6">
           <div class="flex-1">
-           <!-- Inicio del contenido de la guía de instalación -->
-            <div class="mt-4 prose max-w-none text-sm text-gray-800">
-              <h3 class="text-2xl text-topaz-700">Topaz – Versión 25.9.1-SNAPSHOT</h3>
+            <!-- Inicio de Documentación -->
+            <div class="mt-4 mb-6 prose max-w-none text-sm text-gray-800">
+              <h1 class="text-3xl text-black">Documentación</h1>
+
+              <h2 class="text-2xl text-topaz-700">Topaz – Versión 25.9.1-SNAPSHOT</h2>
 
               <p>Topaz es una aplicación de diario personal que combina <strong>Spring Boot, Thymeleaf y JavaFX</strong>
                 para ofrecerte una experiencia fluida de registro de emociones, hábitos y reflexiones diarias.</p>
 
               <hr class="my-4">
 
-              <h4 class="text-xl mt-4">Novedades de esta versión</h4>
+              <h3 class="text-xl mt-4">Novedades de esta versión</h3>
               <ul>
                 <li><strong>Dashboard “Inicio”:</strong> Información general de tu progreso, rachas y recordatorios.
                 </li>
@@ -81,7 +84,7 @@
 
               <hr class="my-4">
 
-              <h4 class="text-xl mt-4">Detalles técnicos</h4>
+              <h3 class="text-xl mt-4">Detalles técnicos</h3>
               <ul>
                 <li><strong>Backend:</strong> Java 17+, Spring Boot 3.x</li>
                 <li><strong>Frontend:</strong> Thymeleaf + Tailwind CSS</li>
@@ -89,15 +92,24 @@
                 <li><strong>Base de datos:</strong> SQLite</li>
                 <li><strong>Distribución:</strong> Fat JAR</li>
               </ul>
+            </div>
+            <!-- Fin de Documentación -->
+          </div>
+        </div>
+      </div>
 
-              <hr class="my-4">
-
-              <h4 class="text-xl mt-4">Guía de instalación</h4>
-              <h5 class="text-lg mt-2">Requisitos previos</h5>
+      <div class="p-6 bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-white/60">
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="flex-1">
+            <!-- Inicio del contenido de la guía de instalación -->
+            <div class="mt-4 mb-6 prose max-w-none text-sm text-gray-800">
+              <h1 class="text-2xl text-black">Guía de instalación</h1>
+              <h3 class="text-lg mt-2">Requisitos previos</h3>
               <ul>
                 <li><strong>Sistema operativo:</strong> Windows. Topaz solo funciona en Windows porque la base de datos
                   se guarda en la ruta fija <code>C:\Topaz\data</code>.</li>
-                <li><strong>Java:</strong> Se recomienda tener instalada la versión <strong>Java 23</strong> (JDK 23). Comprueba
+                <li><strong>Java:</strong> Se recomienda tener instalada la versión <strong>Java 23</strong> (JDK 23).
+                  Comprueba
                   la instalación con:</li>
               </ul>
               <div class="my-2">
@@ -115,17 +127,15 @@ java -jar topaz-25.9.1-SNAPSHOT.jar</code></pre>
               <h5 class="text-lg mt-4">Notas adicionales</h5>
               <ul>
                 <li>Asegúrate de que el usuario de Windows que ejecute Topaz tenga permisos de lectura/escritura en
-                  <code>C:\Topaz\data</code>.</li>
+                  <code>C:\Topaz\data</code>.
+                </li>
                 <li>Si tienes problemas con la versión de Java, instala JDK 23 desde la web oficial de Oracle.</li>
               </ul>
             </div>
-
             <!-- Fin del contenido de la guía -->
-
           </div>
         </div>
       </div>
-
 
     </section>
   </main>
